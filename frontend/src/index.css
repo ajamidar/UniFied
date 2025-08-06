@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+
+:root{
+    font-family:sans-serif;
+}
+
 .navbar-box{
-    @apply flex flex-row bg-[#333333] w-full h-1/12;
+    @apply px-[3vw] py-[2vh] flex flex-row bg-gradient-to-b from-[#b5c1c676] to-[#01ff1227] w-full h-1/12 items-center;
 }

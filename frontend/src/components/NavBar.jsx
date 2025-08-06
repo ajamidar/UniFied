@@ -5,9 +5,8 @@ const NavBar = () => {
   return (
     <>
         <div className='navbar-box'>
-            <div>
+            <div className='flex flex-row justify-center items-center'>
                 <img src={assets.logo} width={90} height={100}></img>
-                <p className='text-black'>hello</p>
             </div>
         </div>
     </>
