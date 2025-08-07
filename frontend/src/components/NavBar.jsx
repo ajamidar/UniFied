@@ -12,8 +12,12 @@ const NavBar = () => {
 
             </div>
             <div className='searchbar'>
-              
+
             </div>
+            <div className='sign-in/account'>
+            
+            </div>
+            
         </div>
     </>
 
