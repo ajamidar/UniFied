@@ -8,6 +8,10 @@ const NavBar = () => {
             <div className='flex flex-row justify-center items-center'>
                 <img src={assets.logo} width={90} height={100}></img>
             </div>
+            <div className='location'>
+
+            </div>
+            
         </div>
     </>
 
