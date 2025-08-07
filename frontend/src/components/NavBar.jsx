@@ -17,7 +17,9 @@ const NavBar = () => {
             <div className='sign-in/account'>
             
             </div>
-            
+            <div className='basket'>
+              
+            </div>
         </div>
     </>
 
