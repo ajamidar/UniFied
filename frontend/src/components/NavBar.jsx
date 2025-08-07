@@ -11,7 +11,9 @@ const NavBar = () => {
             <div className='location'>
 
             </div>
-            
+            <div className='searchbar'>
+              
+            </div>
         </div>
     </>
 
