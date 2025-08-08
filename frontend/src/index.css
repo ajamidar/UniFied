@@ -6,5 +6,5 @@
 }
 
 .navbar-box{
-    @apply px-[3vw] py-[2vh] flex flex-row bg-gradient-to-b from-[#b5c1c676] to-[#01ff1227] w-full h-1/12 items-center;
+    @apply px-[3vw] py-[2vh] flex flex-row bg-gradient-to-b from-[#6ac7ef76] to-[#01bbff19] w-full h-1/12 items-center;
 }
