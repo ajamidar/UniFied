@@ -6,5 +6,13 @@
 }
 
 .navbar-box{
-    @apply px-[3vw] py-[2vh] flex flex-row bg-gradient-to-b from-[#6ac7ef76] to-[#01bbff19] w-full h-1/12 items-center;
+    @apply px-[3vw] py-[2.5vh] flex flex-row bg-gradient-to-b from-[#6ac7ef76] to-[#01bbff19] w-full h-1/12 items-center gap-15;
+}
+
+.scale-up{
+    transition: 0.3s ease;
+}
+
+.scale-up:hover{
+    transform: scale(1.02);
 }
