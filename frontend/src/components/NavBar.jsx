@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {assets} from '../assets/frontend_assets/assets'
 import { NavLink } from 'react-router-dom'
 import { tempUniData } from '../assets/constants'
 
 const NavBar = () => {
+  const [selectedUni, setSelectedUni] = useState('');
 
   return (
     <>
@@ -19,7 +20,7 @@ const NavBar = () => {
                 <img src='/location.svg' width={15} height={15} className='pb-0.5'></img>
               </div>
               <div className='location-dropdown border-1 border-[#333333] rounded-2xl mb-1 text-[0.9rem] text-[#333333] px-2'>
-                <select name="location" id="location" defaultValue='' className='cursor-pointer'>
+                <select name="location" id="location" value={selectedUni} onChange={e => setSelectedUni(e.target.value)} className='cursor-pointer'>
                   <option value="" disabled>
                     Choose one...
                   </option>
@@ -29,6 +30,10 @@ const NavBar = () => {
                 </select>
               </div>
             </div>
+
+            {/* Example usage: */}
+              <p>Selected: {selectedUni}</p>
+            {/* ...existing code... */}
 
             <div className='searchbar'>
 
