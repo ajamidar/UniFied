@@ -13,7 +13,7 @@ const NavBar = () => {
                 <img src={assets.logo} width={90} height={100}></img>
               </NavLink>
             </div>
-            <div className='scale-up border-2 border-[#42424211] flex flex-col gap-1 items-center justify-center px-1 py-2 rounded-lg bg-gradient-to-b from-[#0073ff0f] to-[#0194fd4b]'>
+            <div className='scale-up border-2 border-[#42424211] flex flex-col gap-1 items-center justify-center px-3 py-2 rounded-lg bg-gradient-to-b from-[#0073ff0f] to-[#0194fd4b]'>
               <div className='font-bold text-[1.1rem] flex flex-row gap-1 items-center'>
                 <p>Your University</p>
                 <img src='/location.svg' width={15} height={15} className='pb-0.5'></img>
