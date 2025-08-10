@@ -31,11 +31,8 @@ const NavBar = () => {
               </div>
             </div>
 
-            {/* Example usage: */}
-              <p>Selected: {selectedUni}</p>
-            {/* ...existing code... */}
-
-            <div className='searchbar'>
+            <div className='searchbar w-3/8'>
+              <input type='text' placeholder='Search...' className='w-full h-full px-3 py-2 rounded-lg bg-[#f0f0f0] border border-[#ccc]' />
 
             </div>
             <div className='sign-in/account'>
