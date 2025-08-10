@@ -40,19 +40,19 @@ const NavBar = () => {
             <div className='searchbar w-3/8 flex flex-row items-center justify-between  rounded-lg '>
               <input type='text' placeholder='Search...' value={searchValue} onChange={e => setSearchValue(e.target.value)} className='w-full h-full pl-3 py-3 rounded-tl-lg rounded-bl-lg bg-[#f0f0f0] border border-[#ccc]' />
               <NavLink to="/collection">
-                <button type='button' onClick={handleSearch} className=' px-4 py-2.5 rounded-tr-lg rounded-br-lg bg-[#ffaa01] text-white hover:bg-[#ed9a26] transition '>
+                <button type='button' onClick={handleSearch} className=' px-4 py-2.5 rounded-tr-lg cursor-pointer rounded-br-lg bg-[#ffaa01] text-white hover:bg-[#ed9a26] transition '>
                   <img src='/search.svg' width={30} height={30} alt='Search' />
                 </button>
               </NavLink>
             </div>
             <div className='sign-in/account'>
               <NavLink to='/login'>
-                <button className='px-4 py-2.5 rounded-lg bg-[#21d942] text-white font-bold hover:bg-[#00b50c] border-2 border-[#1a65011c] transition'>
+                <button className='px-4 py-2.5 rounded-lg bg-[#21d942] text-white font-bold hover:bg-[#00b50c] border-2 border-[#1a65011c] transition cursor-pointer'>
                   Sign In / Sign Up
                 </button>
               </NavLink>
             </div>
-            <div className='cart'>
+            <div className='cart scale-up'>
               <NavLink to='/cart' className='flex flex-row items-center justify-center gap-2'>                  
                   <img src='/cart.svg' width={45} height={45} alt='Basket' />
                   <p className='text-[1.25rem] font-bold pt-3'>Cart ({num})</p>  
