@@ -16,7 +16,7 @@ const NavBar = () => {
   return (
     <>
         <div className='navbar-box'>
-            <div className='scale-up flex flex-row justify-center items-center sm:hidden md:hidden lg:flex'>
+            <div className='scale-up flex flex-row justify-center items-center sm:hidden md:hidden lg:flex ml-1'>
               <NavLink to='/'>
                 <img src={assets.logo} width={90} height={100}></img>
               </NavLink>
