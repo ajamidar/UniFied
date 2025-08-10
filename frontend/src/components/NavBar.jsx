@@ -5,6 +5,11 @@ import { tempUniData } from '../assets/constants'
 
 const NavBar = () => {
   const [selectedUni, setSelectedUni] = useState('');
+  const [searchValue, setSearchValue] = useState('');
+
+  const handleSearch = () => {
+    alert(searchValue); // Or use the value however you want
+  };
 
   return (
     <>
@@ -32,8 +37,8 @@ const NavBar = () => {
             </div>
 
             <div className='searchbar w-3/8 flex flex-row items-center justify-between  rounded-lg '>
-              <input type='text' placeholder='Search...' className='w-full h-full pl-3 py-2 rounded-tl-lg rounded-bl-lg bg-[#f0f0f0] border border-[#ccc]' />
-              <button type='button' className=' px-4 py-1.5 rounded-tr-lg rounded-br-lg bg-blue-500 text-white hover:bg-blue-600 transition '>
+              <input type='text' placeholder='Search...' value={searchValue} onChange={e => setSearchValue(e.target.value)} className='w-full h-full pl-3 py-3 rounded-tl-lg rounded-bl-lg bg-[#f0f0f0] border border-[#ccc]' />
+              <button type='button' onClick={handleSearch} className=' px-4 py-2.5 rounded-tr-lg rounded-br-lg bg-[#ffaa01] text-white hover:bg-[#ed9a26] transition '>
                 <img src='/search.svg' width={27} height={27} alt='Search' />
               </button>
             </div>
