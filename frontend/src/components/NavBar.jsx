@@ -47,15 +47,15 @@ const NavBar = () => {
             </div>
             <div className='sign-in/account'>
               <NavLink to='/login'>
-                <button className='px-4 py-2.5 rounded-lg bg-[#21d942] text-white font-bold hover:bg-[#00b50c] border-2 border-[#1a65011c] transition cursor-pointer'>
+                <button className='px-4 py-2.5 text-[1.1rem] rounded-lg bg-[#21d942] text-white font-bold hover:bg-[#00b50c] border-2 border-[#1a65011c] transition cursor-pointer'>
                   Sign In / Sign Up
                 </button>
               </NavLink>
             </div>
             <div className='cart scale-up'>
-              <NavLink to='/cart' className='flex flex-row items-center justify-center gap-2'>                  
+              <NavLink to='/cart' className='flex flex-row items-center justify-center gap-1'>                  
                   <img src='/cart.svg' width={45} height={45} alt='Basket' />
-                  <p className='text-[1.25rem] font-bold pt-3'>Cart ({num})</p>  
+                  <p className='text-[1.2rem] font-bold pt-3'>Cart ({num})</p>  
               </NavLink>
             </div>
         </div>
