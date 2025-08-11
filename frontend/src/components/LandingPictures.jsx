@@ -1,7 +1,8 @@
 // components/Slideshow.tsx
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import TextType from './TextType';
 
 const images = [
   '/landing1.jpg',
@@ -34,9 +35,18 @@ const LandingPictures = () => {
           />
         ))}
         <div className="absolute top-0 left-0 h-full w-2/3 flex items-center justify-start pl-10 z-10">
-          <h1 className="text-[#ffffff] text-5xl font-bold text-left" style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.7)' }}>
+          <TextType 
+            text={["THE UK's 1st UNIVERSITY MARKETPLACE"]}
+            typingSpeed={75}
+            pauseDuration={1500}
+            showCursor={true}
+            cursorCharacter="|"
+            className='text-5xl font-bold'
+            style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.7)' }}
+          />
+          {/*<h1 className="text-[#ffffff] text-5xl font-bold text-left" style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.7)' }}>
             UK's 1<sup className="text-xl align-super">st</sup> UNIVERSITY MARKETPLACE
-          </h1>
+          </h1>*/}
         </div>
       </div>
     </div>

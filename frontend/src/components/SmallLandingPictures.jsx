@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import TextType from './TextType'
 
 const images = [
   '/landing1.jpg',
@@ -33,9 +34,15 @@ const SmallLandingPictures = () => {
           />
         ))}
         <div className="absolute top-0 left-0 h-full w-2/3 flex items-center justify-start pl-3 z-10">
-          <h1 className="text-[#ffffff] text-2xl font-bold text-left" style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.7)' }}>
-            UK's 1<sup className="text-xs align-super">st</sup> UNIVERSITY MARKETPLACE
-          </h1>
+          <TextType 
+            text={["THE UK's 1st UNIVERSITY MARKETPLACE"]}
+            typingSpeed={75}
+            pauseDuration={1500}
+            showCursor={false}
+            cursorCharacter="|"
+            className='text-2xl font-bold'
+            style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.7)' }}
+          />
         </div>
       </div>
     </div>
