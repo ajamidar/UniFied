@@ -91,11 +91,11 @@ const NavBar = () => {
               </div>
               <div className='scale-up border-3 border-[#4242422f] flex flex-col gap-1 items-center justify-center px-2 py-1.5 rounded-lg bg-gradient-to-b from-[#ffffffd1] to-[#c3eaffc4]
                             max-sm:px-2 max-sm:py-1.5  max-sm:order-2 max-sm:gap-1 min-sm:hidden'>
-                <div className='font-bold text-[1.05rem] flex flex-row gap-0.5 items-center justify-center'>
+                <div className='font-bold text-[1.05rem] max-sm:order-1 flex flex-row gap-0.5 items-center justify-center'>
                   <p className='max-sm:text-[0.6rem]'>Your University</p>
                   <img src='/location.svg' width={15} height={15} className='size-[15px] max-sm:size-[10px]'></img>
                 </div>
-                <div className='location-dropdown max-sm:order-3 border-1 border-[#333333] rounded-2xl mb-1 text-[0.85rem] max-sm:text-[0.45rem] text-[#333333] px-2'>
+                <div className='location-dropdown max-sm:order-2 border-1 border-[#333333] rounded-2xl text-[0.85rem] max-sm:text-[0.45rem] text-[#333333] px-2'>
                   <select name="location" id="location" value={selectedUni} onChange={e => setSelectedUni(e.target.value)} className='cursor-pointer'>
                       <option value="" disabled>
                         Choose one...
@@ -104,6 +104,13 @@ const NavBar = () => {
                         <option key={index} value={uni?.uniName}>{uni?.uniName}</option>
                       ))} 
                   </select>
+                </div>
+                <div className='max-sm:order-3'>
+                { selectedUni != '' &&
+                  <NavLink to={`/${selectedUni}`}>
+                        <button onClick={resetSelectedUni} className={`px-2.5 py-1 text-[0.5rem] text-white font-bold  rounded-4xl bg-[#0077ff] cursor-pointer transition`}>Your Uni's Products...</button>
+                  </NavLink>
+                  }
                 </div>
               </div>
             </div>
