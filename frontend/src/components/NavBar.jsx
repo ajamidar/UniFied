@@ -6,6 +6,15 @@ import { tempUniData } from '../assets/constants'
 const NavBar = () => {
   const [selectedUni, setSelectedUni] = useState('');
   const [searchValue, setSearchValue] = useState('');
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
+
+  const resetSelectedUni = () => {
+    setSelectedUni('');
+  };
 
   const handleSearch = () => {
     alert(searchValue); // Or use the value however you want
@@ -39,6 +48,11 @@ const NavBar = () => {
                     ))} 
                 </select>
               </div>
+              { selectedUni != '' &&
+              <NavLink to={`/${selectedUni}`}>
+                    <button onClick={resetSelectedUni} className={`px-2.5 py-2 text-[0.8rem] text-white font-bold  rounded-4xl bg-[#0077ff] cursor-pointer transition`}>Your Uni's Products...</button>
+              </NavLink>
+              }
             </div>
             <div className='searchbar w-3/8 flex flex-row items-center justify-between  rounded-lg 
                             max-sm:w-full  max-sm:order-2'>
@@ -66,9 +80,12 @@ const NavBar = () => {
                   </NavLink>
                 </div>
                 <div className='cart scale-up order-2 max-sm:order-1'>
-                  <NavLink to='/cart' className='flex flex-row items-center justify-center gap-1 max-sm:gap-0'>                  
+                  <NavLink to='/cart' className='flex flex-col items-center justify-center'>
+                    <div className='flex flex-row items-center justify-center gap-1 max-sm:gap-0'>                  
                       <img src='/cart.svg' width={45} height={45} alt='Basket' className='max-sm:size-[20px]'/>
-                      <p className='text-[1.2rem] font-bold pt-3 max-sm:text-[0.55rem] max-sm:pb-0.5'>Cart ({num})</p>  
+                      <p className='text-[1.2rem] font-bold pt-3 max-sm:text-[0.55rem] max-sm:pb-0.5 pr-1'>Cart ({num})</p>  
+                    </div>
+                    <hr className='w-4/4 border-none h-[1.5px] bg-gray-700 hidden'/>
                   </NavLink>
                 </div>
               </div>

@@ -9,6 +9,7 @@ import Login from "./pages/Login"
 import PlaceOrder from "./pages/PlaceOrder"
 import Orders from "./pages/Orders"
 import NavBar from "./components/NavBar"
+import UniHome from "./pages/UniHome"
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/:selectedUni" element={<UniHome />} />
           <Route path="/collection" element={<Collection />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

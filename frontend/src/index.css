@@ -6,7 +6,7 @@
 }
 
 .navbar-box{
-    @apply pr-[3vw] py-[1vh] pl-[4vw] flex max-sm:flex-col max-sm:gap-2 md:flex-col lg:flex-row bg-gradient-to-b from-[#b1f9fd98] to-[#429dfe81] w-full h-1/12 items-center gap-15;
+    @apply pr-[3vw] py-[1vh] pl-[4vw] flex max-sm:flex-col max-sm:gap-2 md:flex-col lg:flex-row bg-gradient-to-b from-[#b1f9fd98] to-[#69adf6b1] w-full h-1/12 items-center gap-15;
 }
 
 .scale-up{
@@ -15,4 +15,8 @@
 
 .scale-up:hover{
     transform: scale(1.02);
+}
+
+a.active hr{
+    display: block;
 }
