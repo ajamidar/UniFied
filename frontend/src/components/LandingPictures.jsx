@@ -23,7 +23,7 @@ const LandingPictures = () => {
 
   return (
     <div className='flex justify-center items-center'>
-      <div className="relative w-12/12 h-[550px] max-w-full max-h-full rounded-4xl overflow-hidden shadow-lg mt-4 mb-2 bg-gradient-to-b from-[#5c5e5f2f] to-[#bab8b375] max-sm:hidden ">
+      <div className="relative w-full h-[550px] max-w-full max-h-full rounded-4xl overflow-hidden shadow-lg mt-4 mb-2 bg-gradient-to-b from-[#5c5e5f2f] to-[#bab8b375] max-sm:hidden ">
         {images.map((src, index) => (
           <img
             key={index}
@@ -42,7 +42,7 @@ const LandingPictures = () => {
             showCursor={true}
             cursorCharacter="|"
             className='text-5xl font-bold'
-            style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.7)' }}
+            style={{ textShadow: '4px 4px 8px rgba(0, 0, 0, 0.7)' }}
           />
           {/*<h1 className="text-[#ffffff] text-5xl font-bold text-left" style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.7)' }}>
             UK's 1<sup className="text-xl align-super">st</sup> UNIVERSITY MARKETPLACE
