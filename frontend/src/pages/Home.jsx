@@ -3,6 +3,7 @@ import LandingPictures from '../components/LandingPictures'
 import SmallLandingPictures from '../components/SmallLandingPictures'
 import LatestCollection from '../components/LatestCollection'
 import OurPolicy from '../components/OurPolicy'
+import NewsLetterBox from '../components/NewsLetterBox'
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
     <div><SmallLandingPictures /></div>
     {/*<div><LatestCollection /></div>*/}
     <div><OurPolicy /></div>
+    <div className='mt-5'><NewsLetterBox /></div>
     </>
     
   )
