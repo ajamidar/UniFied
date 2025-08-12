@@ -11,11 +11,11 @@ const NewsLetterBox = () => {
 
   return (
     <div className='text-center'>
-        <p className='text-2xl font-medium text-gray-800'>Subscribe now and get 20% off</p>
-        <p className='text-gray-400 mt-2'>Dummy text; should be something related to memberships</p>
-        <form onSubmit={onSubmitHandler} className='w-full sm:w-1/2 flex items-center gap-3 mx-auto my-6 border pl-3'>
-            <input type='email' placeholder='Enter your email' className='w-full sm:flex-1 outline-none'  required/>
-            <button type='submit' className='bg-[#00b3ff] font-medium text-white px-4 py-2 mt-3 sm:mt-0 sm:ml-2'>Subscribe</button>
+        <p className='text-2xl font-medium text-gray-800 max-sm:text-[1.2rem]'>Subscribe now and get 20% off</p>
+        <p className='text-gray-400 mt-2 max-sm:text-[0.7rem]'>Get latest updates about new listings, price-drops, coupon code straight to your inbox.</p>
+        <form onSubmit={onSubmitHandler} className='w-full max-sm:w-3/4 flex items-center gap-3 mx-auto my-6 border pl-3'>
+            <input type='email' placeholder='Enter your email' className='w-full sm:flex-1 outline-none max-sm:text-[0.6rem]'  required/>
+            <button type='submit' className='bg-[#00b3ff] font-medium text-white px-4 py-2 mt-3 max-sm:mt-0 sm:ml-2 max-sm:text-[0.65rem]'>Subscribe</button>
         </form>
     </div>
   )
