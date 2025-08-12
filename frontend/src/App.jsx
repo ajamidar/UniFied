@@ -10,6 +10,7 @@ import PlaceOrder from "./pages/PlaceOrder"
 import Orders from "./pages/Orders"
 import NavBar from "./components/NavBar"
 import UniHome from "./pages/UniHome"
+import Footer from "./components/Footer"
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/place-order" element={<PlaceOrder />} />
           <Route path="/orders" element={<Orders />} />
         </Routes>
+        <Footer />
       </div>
     </>
 
