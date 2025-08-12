@@ -11,7 +11,7 @@ const Home = () => {
     <div><LandingPictures /></div>
     <div><SmallLandingPictures /></div>
     {/*<div><LatestCollection /></div>*/}
-    <div><OurPolicy /></div>
+    <div className='mt-10 max-sm:mt-0'><OurPolicy /></div>
     <div className='mt-20 max-sm:mt-5'><NewsLetterBox /></div>
     </>
     
