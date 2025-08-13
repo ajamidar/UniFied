@@ -7,7 +7,10 @@ const UniHome = () => {
 
   return (
     <>
-    <h1 className='font-extrabold'>{selectedUni}'s Home Page</h1>
+    <div className='flex justify-center items-center'>
+      <p className='font-extrabold '>{selectedUni}'s Home Page</p>
+    </div>
+    
     <LatestCollection />
     </>
   )
