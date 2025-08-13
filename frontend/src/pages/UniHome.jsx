@@ -8,12 +8,12 @@ const UniHome = () => {
 
   return (
     <>
-    <div className='flex justify-center items-center mt-10'>
+    <div className='flex justify-center items-center mt-10 max-sm:mt-5'>
       <GradientText
         colors={["#333333", "#4079ff", "#000000", "#4079ff", "#333333"]}
         animationSpeed={5}
         showBorder={false}
-        className="custom-class px-4 text-4xl font-bold!">
+        className="custom-class max-sm:text-3xl max-sm:pl-5 px-4 text-4xl md:text-4xl font-bold!">
         {selectedUni}'s Collection
       </GradientText>
     </div>

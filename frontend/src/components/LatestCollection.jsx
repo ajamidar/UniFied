@@ -14,7 +14,7 @@ const LatestCollection = () => {
 
 
     return (
-        <div className='my-10'>
+        <div className='mt-10 mb-5'>
 
             {/*Rendering products*/}
 
