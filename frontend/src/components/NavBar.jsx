@@ -59,7 +59,7 @@ const NavBar = () => {
               <input type='text' placeholder='Search...' value={searchValue} onChange={e => setSearchValue(e.target.value)} className='w-full h-1/4 pl-3 py-3 rounded-tl-lg rounded-bl-lg bg-[#f0f0f0] border border-[#ccc] max-sm:text-[0.7rem]' />
               <NavLink to="/collection">
                 <button type='button' onClick={handleSearch} className=' px-4 py-2.5 rounded-tr-lg cursor-pointer rounded-br-lg bg-[#ffaa01] text-white hover:bg-[#ed9a26] transition '>
-                  <img src='/search.svg' width={30} height={30} alt='Search' className='max-sm:size-[17.5px]'/>
+                  <img src='/search.svg' width={30} height={30} alt='Search' className='max-sm:size-[17.5px] md:size-[24px]'/>
                 </button>
               </NavLink>
             </div>
@@ -73,17 +73,17 @@ const NavBar = () => {
               <div className='flex flex-row items-center justify-center gap-15 max-sm:flex-col max-sm:gap-0 max-sm:order-3'>
                 <div className='sign-in/account order-2 max-sm:order-2 '>
                   <NavLink to='/login'>
-                    <button className='px-4 py-2.5 text-[1.1rem] rounded-lg bg-[#21d942] text-white font-bold hover:bg-[#00b50c] border-2 border-[#1a65011c] transition cursor-pointer
+                    <button className='px-4 py-1 text-[1rem] rounded-lg bg-[#21d942] text-white font-bold hover:bg-[#00b50c] border-2 border-[#1a65011c] transition cursor-pointer
                                       max-sm:text-[0.4rem] max-sm:px-1 max-sm:py-1.5 max-sm:font-medium'>
-                      Sign In / Sign Up
+                      Sign In / Register
                     </button>
                   </NavLink>
                 </div>
                 <div className='cart scale-up order-2 max-sm:order-1'>
                   <NavLink to='/cart' className='flex flex-col items-center justify-center'>
                     <div className='flex flex-row items-center justify-center gap-1 max-sm:gap-0'>                  
-                      <img src='/cart.svg' width={45} height={45} alt='Basket' className='max-sm:size-[20px]'/>
-                      <p className='text-[1.2rem] font-bold pt-3 max-sm:text-[0.55rem] max-sm:pb-0.5 pr-1'>Cart ({num})</p>  
+                      <img src='/cart.svg' width={45} height={45} alt='Basket' className='max-sm:size-[20px] md:size-[45px]'/>
+                      <p className='text-[1.2rem] font-bold pt-3 max-sm:text-[0.55rem] md:text-[1rem] max-sm:pb-0.5 pr-2'>Cart ({num})</p>  
                     </div>
                     <hr className='w-4/4 border-none h-[1.5px] bg-gray-700 hidden'/>
                   </NavLink>
