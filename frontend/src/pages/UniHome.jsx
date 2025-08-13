@@ -7,8 +7,8 @@ const UniHome = () => {
 
   return (
     <>
-    <div className='flex justify-center items-center'>
-      <p className='font-extrabold '>{selectedUni}'s Home Page</p>
+    <div className='flex justify-center items-center mt-10'>
+      <p className='font-extrabold text-4xl'>{selectedUni}'s Home Page</p>
     </div>
     
     <LatestCollection />
