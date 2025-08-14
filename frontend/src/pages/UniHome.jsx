@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import LatestCollection from '../components/LatestCollection';
 import GradientText from '../components/GradientText';
+import { ShopContext } from '../context/ShopContext';
 
 const UniHome = () => {
     const {selectedUni} = useParams();
+    const { products } = useContext(ShopContext);
 
   return (
     <>
@@ -22,7 +24,9 @@ const UniHome = () => {
       <hr className='bg-[#333333] h-0.5 w-6/7' />
     </div>
     
-    <LatestCollection />
+    <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t'>
+
+    </div>
     </>
   )
 }
