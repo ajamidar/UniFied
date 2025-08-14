@@ -80,7 +80,7 @@ const NavBar = () => {
                   </NavLink>
                 </div>
                 <div className='cart scale-up order-2 max-sm:order-1'>
-                  <NavLink to='/cart' className='flex flex-col items-center justify-center'>
+                  <NavLink to='/cart' className='flex flex-col items-center justify-center md:pr-2'>
                     <div className='flex flex-row items-center justify-center gap-1 max-sm:gap-0'>                  
                       <img src='/cart.svg' width={45} height={45} alt='Basket' className='max-sm:size-[20px] md:size-[45px]'/>
                       <p className='text-[1.2rem] font-bold pt-3 max-sm:text-[0.55rem] md:text-[1rem] max-sm:pb-0.5 pr-2'>Cart ({num})</p>  
