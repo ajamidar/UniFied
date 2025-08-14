@@ -1,16 +1,21 @@
-import React, { useContext, useState } from 'react'
+import React, { use, useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import LatestCollection from '../components/LatestCollection';
 import GradientText from '../components/GradientText';
 import { ShopContext } from '../context/ShopContext';
 import { assets } from '../assets/frontend_assets/assets';
 import Title from '../components/Title';
+import ProductItem from '../components/ProductItem';
 
 const UniHome = () => {
     const {selectedUni} = useParams();
     const { products } = useContext(ShopContext);
     const [showFilter, setShowFilter] = useState(false);
     const [filteredProducts, setFilteredProducts] = useState([]);
+
+    useEffect(() => {
+      setFilteredProducts(products);
+    },[])
 
   return (
     <>
@@ -79,13 +84,24 @@ const UniHome = () => {
             <option value="">Sort by: Price - Low to High</option>
             <option value="">Sort by: Price - High to Low</option>
           </select>
+        </div>
 
         {/*Map Products*/}
         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6'>
-
+          {
+            filteredProducts.map((item, index) => (
+              <ProductItem
+                key={index}
+                id={item._id}
+                image={item.image}
+                name={item.name}
+                price={item.price}
+              />
+            ))
+          }
         </div>
 
-        </div>
+      
 
       </div>
 
