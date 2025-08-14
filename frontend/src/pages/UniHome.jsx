@@ -44,6 +44,21 @@ const UniHome = () => {
             </p>
           </div>
         </div>
+        {/*Subcategory Section*/}
+        <div className={`border border-gray-300 pl-5 py-3 mt-6 ${showFilter ? '' : 'hidden'} sm:block`}>
+          <p className='mb-3 text-sm font-medium'>TYPE</p>
+          <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
+            <p className='flex gap-2'>
+              <input type='checkbox' className='w-3' value={'Tops'}/>Tops
+            </p>
+            <p className='flex gap-2'>
+              <input type='checkbox' className='w-3' value={'Bottoms'}/>Bottoms
+            </p>
+            <p className='flex gap-2'>
+              <input type='checkbox' className='w-3' value={'Shoes'}/>Shoes
+            </p>
+          </div>
+        </div>
       </div>
 
     </div>
