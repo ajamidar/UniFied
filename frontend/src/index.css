@@ -201,12 +201,12 @@ a.active hr{
 
 .gallery-gradient-left {
   left: 0;
-  background: linear-gradient(to left, rgba(220, 220, 220, 0) 0%, #cfcfcf 100%);
+  background: linear-gradient(to left, rgba(220, 220, 220, 0) 0%, #e3e3e3 100%);
 }
 
 .gallery-gradient-right {
   right: 0;
-  background: linear-gradient(to right, rgba(220, 220, 220, 0) 0%, #cfcfcf 100%);
+  background: linear-gradient(to right, rgba(220, 220, 220, 0) 0%, #e3e3e3 100%);
 }
 
 .gallery-content {

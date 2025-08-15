@@ -4,7 +4,7 @@ import SpotLightCard from './SpotLightCard'
 
 const OurPolicy = () => {
   return (
-    <div className='flex flex-row sm:flex-row justify-around gap-10 max-sm:gap-2 text-center py-2.5 max-sm:py-2 text-xs sm:text-sm md:text-base text-[#333333]'>
+    <div className='flex flex-row sm:flex-row justify-around gap-10 max-sm:gap-2 text-center py-5 max-sm:py-2 text-xs sm:text-sm md:text-base text-[#333333]'>
         <SpotLightCard className="custom-spotlight-card max-sm:px-2!" spotlightColor="rgba(0, 229, 255, 0.2)">
           <div>
             <img src={assets.exchange_icon} className='w-12 max-sm:w-7 m-auto mb-5 max-sm:mb-2 max-sm:size-[30px]' alt="Exchange Icon" />
