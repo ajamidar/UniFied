@@ -12,6 +12,12 @@ const Home = () => {
     <div><SmallLandingPictures /></div>
     {/*<div><LatestCollection /></div>*/}
     <div className='mt-10 max-sm:mt-0'><OurPolicy /></div>
+    <div className='mt-10 max-sm:mt-5'>
+      <div className='flex justify-center items-center'>
+        <h1 className='text-4xl font-bold text-center'>Latest Collection</h1>
+      </div>
+      <LatestCollection />
+    </div>
     <div className='mt-20 max-sm:mt-5'><NewsLetterBox /></div>
     </>
     
