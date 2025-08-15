@@ -181,3 +181,85 @@ a.active hr{
 .card-spotlight:focus-within::before {
   opacity: 0.6;
 }
+
+.gallery-container {
+  position: relative;
+  height: 500px;
+  width: 80%;
+  overflow: hidden;
+  border-radius: 8%;
+  background: #efefef95;
+}
+
+.gallery-gradient {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 48px;
+  z-index: 10;
+}
+
+.gallery-gradient-left {
+  left: 0;
+  background: linear-gradient(to left, rgba(220, 220, 220, 0) 0%, #cfcfcf 100%);
+}
+
+.gallery-gradient-right {
+  right: 0;
+  background: linear-gradient(to right, rgba(220, 220, 220, 0) 0%, #cfcfcf 100%);
+}
+
+.gallery-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  perspective: 800px;
+  transform-style: preserve-3d;
+}
+
+.gallery-track {
+  display: flex;
+  height: auto;
+  min-height: 200px;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+  transform-style: preserve-3d;
+  width: 100%;
+}
+
+.gallery-item {
+  position: absolute;
+  display: flex;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  padding: 8%;
+  backface-visibility: hidden;
+}
+
+.gallery-img {
+  pointer-events: none;
+  height: 280px;
+  width: 200px;
+  border-radius: 15px;
+  border: 3px solid #fff;
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .gallery-item {
+    padding: 6%;
+  }
+  .gallery-img {
+    height: 220px;
+    width: 100px;
+  }
+}
