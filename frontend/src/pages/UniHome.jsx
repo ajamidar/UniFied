@@ -47,10 +47,6 @@ const UniHome = () => {
     }
 
     useEffect(() => {
-      setFilteredProducts(products);
-    },[])
-
-    useEffect(() => {
       applyFilters();
     }, [category, subCategory]);
 
