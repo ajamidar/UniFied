@@ -15,9 +15,9 @@ const Home = () => {
     <hr className='mt-10 max-sm:mt-5'/>
     <div className='mt-10 max-sm:mt-5'>
       <div className='flex flex-row justify-center items-center'>
-        <h1 className='text-5xl max-sm:text-3xl font-bold text-center  mb-10'>Shop</h1>
-        <h1 className='text-5xl max-sm:text-3xl font-bold text-center text-[#ff25c5] mb-10'>&nbsp;Preloved&nbsp;</h1>
-        <h1 className='text-5xl max-sm:text-3xl font-bold text-center  mb-10'>Products</h1>
+        <h1 className='text-5xl max-sm:text-2xl font-bold text-center  mb-10 max-sm:mb-5'>Shop</h1>
+        <h1 className='text-5xl max-sm:text-2xl font-bold text-center text-[#ff25c5] mb-10 max-sm:mb-5'>&nbsp;Preloved&nbsp;</h1>
+        <h1 className='text-5xl max-sm:text-2xl font-bold text-center  mb-10 max-sm:mb-5'>Products</h1>
       </div>
       <div className='flex justify-center items-center'>
         <RollingGallery autoplay={true} pauseOnHover={true} />

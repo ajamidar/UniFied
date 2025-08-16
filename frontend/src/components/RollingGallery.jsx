@@ -88,7 +88,7 @@ const RollingGallery = ({ autoplay = false, pauseOnHover = false, images = [] })
   };
 
   return (
-    <div className="gallery-container">
+    <div className="gallery-container max-sm:h-[50vh]!">
       <div className="gallery-gradient gallery-gradient-left"></div>
       <div className="gallery-gradient gallery-gradient-right"></div>
       <div className="gallery-content">
@@ -115,7 +115,7 @@ const RollingGallery = ({ autoplay = false, pauseOnHover = false, images = [] })
                 transform: `rotateY(${i * (360 / faceCount)}deg) translateZ(${radius}px)`,
               }}
             >
-              <img src={url} alt="gallery" className="gallery-img" />
+              <img src={url} alt="gallery" className="gallery-img max-sm:size-[200px]!" />
             </div>
           ))}
         </motion.div>
