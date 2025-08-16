@@ -31,13 +31,29 @@ const UniHome = () => {
       }
     }
  
+    const applyFilters = () => {
+
+      let productsCopy = products.slice();
+
+      if (category.length > 0) {
+        productsCopy = productsCopy.filter(item => category.includes(item.category));
+      }
+
+      if (subCategory.length > 0) {
+        productsCopy = productsCopy.filter(item => subCategory.includes(item.subCategory)); 
+      }
+
+      setFilteredProducts(productsCopy);
+    }
+
     useEffect(() => {
       setFilteredProducts(products);
     },[])
 
     useEffect(() => {
-      console.log(category);
-    },[category])
+      applyFilters();
+    }, [category, subCategory]);
+
 
   return (
     <>
