@@ -14,6 +14,7 @@ const UniHome = () => {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [category, setCategory] = useState([]);
     const [subCategory, setSubCategory] = useState([]);
+    const [sortType, setSortType] = useState('relavence');
 
     const toggleCategory = (e) => {
       if (category.includes(e.target.value)) {
@@ -46,9 +47,31 @@ const UniHome = () => {
       setFilteredProducts(productsCopy);
     }
 
+    const sortProducts = () => {
+      let fpCopy = filteredProducts.slice();
+
+      switch (sortType) {
+        case 'low-high':
+          setFilteredProducts(fpCopy.sort((a, b) => (a.price - b.price)));
+          break;
+        
+        case 'high-low':
+          setFilteredProducts(fpCopy.sort((a, b) => (b.price - a.price)));
+          break;
+
+        default:
+          applyFilters();
+          break;
+      }
+    }
+
     useEffect(() => {
       applyFilters();
     }, [category, subCategory]);
+
+    useEffect(() => {
+      sortProducts();
+    }, [sortType]);
 
 
   return (
@@ -113,10 +136,10 @@ const UniHome = () => {
         <div className='flex justify-between text-base sm:text-2xl mb-4'>
           <Title text1={'ALL'} text2={'PRODUCTS'} />
           {/*Product Sorting*/}
-          <select className='border-2 border-gray-300 text-sm px-2'>
+          <select onChange={(e) => setSortType(e.target.value)} className='border-2 border-gray-300 text-sm px-2'>
             <option value="relavence">Sort by: Relavence</option>
-            <option value="">Sort by: Price - Low to High</option>
-            <option value="">Sort by: Price - High to Low</option>
+            <option value="low-high">Sort by: Price - Low to High</option>
+            <option value="high-low">Sort by: Price - High to Low</option>
           </select>
         </div>
 
