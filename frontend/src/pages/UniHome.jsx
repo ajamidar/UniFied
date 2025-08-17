@@ -65,10 +65,13 @@ const UniHome = () => {
       }
     }
 
+    // Initial category application
     useEffect(() => {
       applyFilters();
     }, [category, subCategory]);
 
+
+    // Initial sort application
     useEffect(() => {
       sortProducts();
     }, [sortType]);
