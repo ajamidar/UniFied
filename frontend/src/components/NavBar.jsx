@@ -22,12 +22,10 @@ const NavBar = () => {
 
   const num=0; // Placeholder for cart item count, replace with actual logic
 
-  //console.log("Selected University:", selectedUni);
-
   return (
     <>
-        <div className='navbar-box'>
-            <div className='scale-up flex flex-row justify-center items-center sm:hidden md:hidden max-sm:hidden lg:flex ml-2'>
+        <div className='navbar-box sm:gap-15! md:gap-15! lg:gap-15! xl:gap-15! 2xl:gap-15!'>
+            <div className='scale-up flex flex-row justify-center items-center sm:hidden md:hidden max-sm:hidden lg:flex ml-3'>
               <NavLink to='/'>
                 <img src={assets.logo} width={90} height={100}></img>
               </NavLink>
@@ -63,20 +61,19 @@ const NavBar = () => {
                 </button>
               </NavLink>
             </div>
-            <div className='flex flex-row items-center justify-center gap-15 
+            <div className='flex flex-row items-center justify-center sm:gap-15! md:gap-15! lg:gap-15! xl:gap-15! 2xl:gap-15! 
                             max-sm:gap-5 max-sm:order-1'>
               <div className='scale-up flex flex-row justify-center items-center min-sm:hidden ml-1 max-sm:order-1'>
                 <NavLink to='/'>
                   <img src={assets.logo} width={90} height={100} className='size-[50px]'></img>
                 </NavLink>
               </div>
-              <div className='flex flex-row items-center justify-center max-sm:flex-col max-sm:gap-0 max-sm:order-3
-                              sm:text-gap-15! md:gap-15! lg:gap-15! xl:gap-15! 2xl:gap-15!'>
+              <div className='flex flex-row items-center justify-center max-sm:flex-col max-sm:gap-0 max-sm:order-3 gap-15'>
                 <div className='sign-in/account order-2 max-sm:order-2 max-sm:pb-0.5'>
                   <NavLink to='/login'>
                     <button className='text-[1rem] sm:text-[0.42rem]! md:text-[1rem]! lg:text-[0.9rem]! xl:text-[1rem]! 2xl:text-[1.1rem]!
                      rounded-lg bg-[#21d942] text-white font-bold hover:bg-[#00b50c] border-2 border-[#1a65011c] transition cursor-pointer
-                                      max-sm:font-medium max-sm:text-[0.42rem]! lg:font-medium!
+                                      max-sm:font-medium max-sm:text-[0.42rem]! lg:font-medium! xl:font-extrabold! 2xl:font-extrabold!
                                       max-sm:px-1! sm:px-1! md:px-1! lg:px-2! xl:px-0! 2xl:px-4!
                                       max-sm:py-0.5! sm:py-1! md:py-1! lg:py-1! xl:py-0! 2xl:py-2!'>
                       Sign In / Register
