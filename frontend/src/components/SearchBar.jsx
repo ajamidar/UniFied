@@ -24,8 +24,6 @@ const SearchBar = () => {
             setTimeout(() => setShowModal(false), 3000);
         }
     }
-    
-
 
     return showSearch ? (
         <>
