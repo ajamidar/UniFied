@@ -6,9 +6,13 @@ export const ShopContext = createContext();
 const ShopContextProvider = ({ children }) => {
 
     const currency = '£';
+    const [search, setSearch] = useState('');
+    const [showSearch, setShowSearch] = useState(true);
 
     const value = {
-        products , currency
+        products , currency,
+        search, setSearch,
+        showSearch, setShowSearch
     }
 
     return (

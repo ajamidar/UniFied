@@ -11,12 +11,14 @@ import Orders from "./pages/Orders"
 import NavBar from "./components/NavBar"
 import UniHome from "./pages/UniHome"
 import Footer from "./components/Footer"
+import SearchBar from "./components/SearchBar"
 
 function App() {
 
   return (
     <>
       <NavBar />
+      <SearchBar />
       <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[4vw]">
         <Routes>
           <Route path="/" element={<Home />} />
