@@ -16,6 +16,8 @@ const UniHome = () => {
     const [subCategory, setSubCategory] = useState([]);
     const [sortType, setSortType] = useState('relavence');
 
+    // Toggles category selection in filter
+    // If category exists, removes it; if not, adds it to selection
     const toggleCategory = (e) => {
       if (category.includes(e.target.value)) {
         setCategory(prev => prev.filter(item => item !== e.target.value));
@@ -24,6 +26,8 @@ const UniHome = () => {
     }
     } 
 
+    // Toggles subcategory selection in filter
+    // If subcategory exists, removes it; if not, adds it to selection
     const toggleSubCategory = (e) => {
       if (subCategory.includes(e.target.value)) {
         setSubCategory(prev => prev.filter(item => item !== e.target.value));
@@ -32,8 +36,9 @@ const UniHome = () => {
       }
     }
  
+    // Applies category and subcategory filters to products
+    // Creates a filtered copy of products based on selected filters
     const applyFilters = () => {
-
       let productsCopy = products.slice();
 
       if (category.length > 0) {
@@ -47,6 +52,8 @@ const UniHome = () => {
       setFilteredProducts(productsCopy);
     }
 
+    // Sorts products based on selected sort type (price low-high, high-low)
+    // Creates a copy of filtered products and sorts based on price
     const sortProducts = () => {
       let fpCopy = filteredProducts.slice();
 
@@ -65,13 +72,13 @@ const UniHome = () => {
       }
     }
 
-    // Initial category application
+    // Effect hook to apply filters when category or subcategory changes
     useEffect(() => {
       applyFilters();
     }, [category, subCategory]);
 
 
-    // Initial sort application
+    // Effect hook to apply sorting when sort type changes
     useEffect(() => {
       sortProducts();
     }, [sortType]);
