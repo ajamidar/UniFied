@@ -9,7 +9,7 @@ import RollingGallery from '../components/RollingGallery'
 const Home = () => {
   return (
     <>
-    <div className='scale-up'><LandingPictures /></div>
+    <div className='scale-up '><LandingPictures /></div>
     <div><SmallLandingPictures /></div>
     <div className='mt-10 max-sm:mt-0'><OurPolicy /></div>
     <hr className='mt-10 max-sm:mt-5'/>
