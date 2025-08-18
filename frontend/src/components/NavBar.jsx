@@ -76,7 +76,7 @@ const NavBar = () => {
                 <div className='sign-in/account order-2 max-sm:order-2 max-sm:pb-0.5'>
                   <NavLink to='/login'>
                     <button className='text-[1rem] sm:text-[0.42rem]! md:text-[1rem]! lg:text-[0.9rem]! xl:text-[1rem]! 2xl:text-[1.1rem]!
-                     rounded-lg bg-[#21d942] text-white font-bold hover:bg-[#00b50c] border-2 border-[#1a65011c] transition cursor-pointer
+                     rounded-lg bg-[#215bd9] text-white font-bold hover:bg-[#0024b5] border-2 border-[#1a65011c] transition cursor-pointer
                                       max-sm:font-medium max-sm:text-[0.42rem]! lg:font-medium! xl:font-extrabold! 2xl:font-extrabold!
                                       max-sm:px-1! sm:px-1! md:px-1! lg:px-2! xl:px-0! 2xl:px-4!
                                       max-sm:py-0.5! sm:py-1! md:py-1! lg:py-1! xl:py-0! 2xl:py-2!'>
