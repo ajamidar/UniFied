@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {assets} from '../assets/frontend_assets/assets'
 import { NavLink } from 'react-router-dom'
 import { tempUniData } from '../assets/constants'
+import SearchBar from './SearchBar'
 
 const NavBar = () => {
   const [selectedUni, setSelectedUni] = useState('');
@@ -52,6 +53,8 @@ const NavBar = () => {
               </NavLink>
               }
             </div>
+            <SearchBar />
+            {/*}
             <div className='searchbar w-3/8 flex flex-row items-center justify-between  rounded-lg 
                             max-sm:w-full  max-sm:order-2'>
               <input type='text' placeholder='Search...' value={searchValue} onChange={e => setSearchValue(e.target.value)} className='w-full h-1/4 pl-3 py-3 rounded-tl-lg rounded-bl-lg bg-[#f0f0f0] border border-[#ccc] max-sm:text-[0.7rem]' />
@@ -61,6 +64,7 @@ const NavBar = () => {
                 </button>
               </NavLink>
             </div>
+            */}
             <div className='flex flex-row items-center justify-center sm:gap-15! md:gap-15! lg:gap-15! xl:gap-15! 2xl:gap-15! 
                             max-sm:gap-5 max-sm:order-1'>
               <div className='scale-up flex flex-row justify-center items-center min-sm:hidden ml-1 max-sm:order-1'>
