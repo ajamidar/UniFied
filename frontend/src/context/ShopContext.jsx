@@ -8,11 +8,13 @@ const ShopContextProvider = ({ children }) => {
     const currency = '£';
     const [search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(true);
+    const [searchHit, setSearchHit] = useState(false);
 
     const value = {
         products , currency,
         search, setSearch,
-        showSearch, setShowSearch
+        showSearch, setShowSearch,
+        searchHit, setSearchHit
     }
 
     return (

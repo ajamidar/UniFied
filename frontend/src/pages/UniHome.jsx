@@ -1,6 +1,5 @@
 import React, { use, useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import LatestCollection from '../components/LatestCollection';
 import GradientText from '../components/GradientText';
 import { ShopContext } from '../context/ShopContext';
 import { assets } from '../assets/frontend_assets/assets';
@@ -9,7 +8,7 @@ import ProductItem from '../components/ProductItem';
 
 const UniHome = () => {
     const {selectedUni} = useParams();
-    const { products } = useContext(ShopContext);
+    const { products, search, searchHit, setSearchHit } = useContext(ShopContext);
     const [showFilter, setShowFilter] = useState(false);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [category, setCategory] = useState([]);
@@ -36,53 +35,63 @@ const UniHome = () => {
       }
     }
  
-    // Applies category and subcategory filters to products
-    // Creates a filtered copy of products based on selected filters
-    const applyFilters = () => {
-      let productsCopy = products.slice();
+    // Modify the applyFilters function to use products as default parameter
+    const applyFilters = (baseProducts = products) => {
+        if (!baseProducts) return;
+        let productsCopy = baseProducts.slice();
 
-      if (category.length > 0) {
-        productsCopy = productsCopy.filter(item => category.includes(item.category));
-      }
+        if (category.length > 0) {
+            productsCopy = productsCopy.filter(item => category.includes(item.category));
+        }
 
-      if (subCategory.length > 0) {
-        productsCopy = productsCopy.filter(item => subCategory.includes(item.subCategory)); 
-      }
+        if (subCategory.length > 0) {
+            productsCopy = productsCopy.filter(item => subCategory.includes(item.subCategory)); 
+        }
 
-      setFilteredProducts(productsCopy);
+        setFilteredProducts(productsCopy);
     }
 
-    // Sorts products based on selected sort type (price low-high, high-low)
-    // Creates a copy of filtered products and sorts based on price
+    // Modify the sortProducts function
     const sortProducts = () => {
-      let fpCopy = filteredProducts.slice();
+        if (!filteredProducts) return;
+        let fpCopy = filteredProducts.slice();
 
-      switch (sortType) {
-        case 'low-high':
-          setFilteredProducts(fpCopy.sort((a, b) => (a.price - b.price)));
-          break;
-        
-        case 'high-low':
-          setFilteredProducts(fpCopy.sort((a, b) => (b.price - a.price)));
-          break;
+        switch (sortType) {
+            case 'low-high':
+                setFilteredProducts(fpCopy.sort((a, b) => (a.price - b.price)));
+                break;
+            
+            case 'high-low':
+                setFilteredProducts(fpCopy.sort((a, b) => (b.price - a.price)));
+                break;
 
-        default:
-          applyFilters();
-          break;
+            default:
+                applyFilters();
+                break;
+        }
       }
+
+    const showSearchProducts = () => {
+      const searchFiltered = products.filter(item => 
+          item.name.toLowerCase().includes(search.toLowerCase())
+      );
+      applyFilters(searchFiltered); // Apply category/subcategory filters to search results
     }
 
-    // Effect hook to apply filters when category or subcategory changes
+    // Effect hook for search and filters
     useEffect(() => {
-      applyFilters();
-    }, [category, subCategory]);
+        if (searchHit) {
+            showSearchProducts();
+        } else {
+            applyFilters(products);
+        }
+    }, [searchHit, category, subCategory, products]);
 
 
     // Effect hook to apply sorting when sort type changes
     useEffect(() => {
       sortProducts();
     }, [sortType]);
-
 
   return (
     <>

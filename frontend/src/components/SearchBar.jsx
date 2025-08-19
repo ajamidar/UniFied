@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 
 const SearchBar = () => {
 
-    const {search, setSearch, showSearch, setShowSearch} = useContext(ShopContext);
+    const {search, setSearch, showSearch, setShowSearch, searchHit, setSearchHit} = useContext(ShopContext);
     const [error, setError] = useState('');
     const [showModal, setShowModal] = useState(false);
 
@@ -22,6 +22,9 @@ const SearchBar = () => {
             setShowModal(true);
             // Auto-hide the modal after 3 seconds
             setTimeout(() => setShowModal(false), 3000);
+        } else {
+            // Toggle searchHit properly
+            setSearchHit(prev => !prev);
         }
     }
 
