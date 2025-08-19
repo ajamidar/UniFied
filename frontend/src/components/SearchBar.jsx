@@ -18,7 +18,7 @@ const SearchBar = () => {
             // Auto-hide the modal after 3 seconds
             setTimeout(() => setShowModal(false), 3000);
         } else if (search == "") {
-            setError('Please specify your search requirements');
+            setError('Please enter your search requirements');
             setShowModal(true);
             // Auto-hide the modal after 3 seconds
             setTimeout(() => setShowModal(false), 3000);
