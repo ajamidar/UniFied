@@ -1,5 +1,5 @@
 import React, { use, useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import GradientText from '../components/GradientText';
 import { ShopContext } from '../context/ShopContext';
 import { assets } from '../assets/frontend_assets/assets';
@@ -14,6 +14,7 @@ const UniHome = () => {
     const [category, setCategory] = useState([]);
     const [subCategory, setSubCategory] = useState([]);
     const [sortType, setSortType] = useState('relavence');
+    const navigate = useNavigate();
 
     // Toggles category selection in filter
     // If category exists, removes it; if not, adds it to selection
@@ -93,14 +94,15 @@ const UniHome = () => {
       sortProducts();
     }, [sortType]);
 
-    const reloadDefaultProducts = () => {
-      applyFilters();
-    }
+
+    const refreshPage = () => {
+        navigate(0); // This refreshes the current route
+    };
 
   return (
     <>
     <div className='flex justify-center items-center mt-10 max-sm:mt-5'>
-      <button onClick={reloadDefaultProducts}>
+      <button onClick={refreshPage}>
         <GradientText
           colors={["#333333", "#4079ff", "#000000", "#4079ff", "#333333"]}
           animationSpeed={5}
