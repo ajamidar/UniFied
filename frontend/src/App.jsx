@@ -11,7 +11,6 @@ import Orders from "./pages/Orders"
 import NavBar from "./components/NavBar"
 import UniHome from "./pages/UniHome"
 import Footer from "./components/Footer"
-import SearchBar from "./components/SearchBar"
 
 function App() {
 
