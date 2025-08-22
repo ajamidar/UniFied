@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext';
-import { p } from 'motion/react-client';
 
 const Product = () => {
 
   const { productId } = useParams();
   const { products } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
+  const [image, setImage] = useState('')
 
   const fetchProductData = async () => {
 
