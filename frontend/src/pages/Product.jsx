@@ -26,9 +26,15 @@ const Product = () => {
 
   return productData ? (
     <div className='border-t-2 pt-10 transition-opacity ease-in duration-500 opacity-100'>
-
-      <div>
-
+      {/* Product Details */}
+      <div className='flex gap-12 sm:gap-12 flex-col sm:flex-row justify-center items-center'>
+        {/* Product Image */}
+        <img src={productData.image} alt={productData.name} className='w-48 h-48 object-cover' />
+        <div className='flex flex-col'>
+          <h2 className='text-2xl font-bold'>{productData.name}</h2>
+          <p className='text-lg'>{productData.description}</p>
+          <span className='text-xl font-semibold'>${productData.price}</span>
+        </div>
       </div>
 
     </div>
