@@ -29,11 +29,8 @@ const Product = () => {
       {/* Product Details */}
       <div className='flex gap-12 sm:gap-12 flex-col sm:flex-row justify-center items-center'>
         {/* Product Image */}
-        <img src={productData.image} alt={productData.name} className='w-48 h-48 object-cover' />
-        <div className='flex flex-col'>
-          <h2 className='text-2xl font-bold'>{productData.name}</h2>
-          <p className='text-lg'>{productData.description}</p>
-          <span className='text-xl font-semibold'>${productData.price}</span>
+        <div className='flex-1 flex flex-col-reverse gap-3 sm:flex-row'>
+          <div className='flex sm:flex-col overflow'
         </div>
       </div>
 
