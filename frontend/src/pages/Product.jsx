@@ -28,7 +28,7 @@ const Product = () => {
   }, [productId,products])
 
   return productData ? (
-    <div className='border-t-2 pt-10 transition-opacity ease-in duration-500 opacity-100'>
+    <div className='border-t-1 mt-2 pt-2 transition-opacity ease-in duration-500 opacity-100'>
 
       {/* Product Details */}
 
@@ -62,7 +62,7 @@ const Product = () => {
             <p className='pl-1'>(122) reviews</p>
           </div>
           <p className='mt-3 text-2xl font-medium'>{currency}{productData.price}</p>
-          <p className='mt-2 text-lg font-light'>{productData.description}</p>
+          <p className='mt-2 text-lg font-light text-gray-500 md:w-4/5'>{productData.description}</p>
           <div className='flex flex-col gap-1 my-5'>
             <p>Size:</p>
             <div className='flex flex-wrap gap-2'>
@@ -73,8 +73,27 @@ const Product = () => {
               ))}
             </div>
           </div>
+          <button className='bg-blue-700 rounded-2xl text-white px-8 py-3 text-sm active:bg-blue-900 cursor-pointer'>ADD TO CART</button>
+          <hr className='mt-8 sm:w-4/5' />
+          <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
+              <p>✅Verified Seller</p>
+              <p>🔄Easy return available within 7 days</p>
+              <p>🔒Secure payment protection via Stripe</p>
+          </div>
         </div>
+      </div>
 
+      {/* Description & Review Section */}
+
+      <div className='mt-10'>
+        <div className='flex'>
+          <b className='border px-5 py-3 text-sm'>Description</b>
+          <p className='border px-5 py-3 text-sm'>Seller reviews(122) </p>
+        </div>
+        <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500'>
+          <p>A soft and stylish pink t-shirt made from breathable cotton fabric, perfect for everyday wear. Designed with a classic crew neckline and short sleeves.</p>
+          <p>The vibrant pink shade adds a pop of color to your wardrobe, making it suitable for both casual outings and laid-back lounging. Durable, lightweight, and easy to care for—this pink tee is a versatile essential you’ll reach for again and again.</p>
+        </div>
       </div>
 
     </div>
