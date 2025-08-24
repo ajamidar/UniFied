@@ -264,3 +264,7 @@ a.active hr{
     width: 100px;
   }
 }
+
+::-webkit-scrollbar{
+  display: none;
+}
