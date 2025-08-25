@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext';
 import { assets } from '../assets/frontend_assets/assets';
+import RelatedProducts from '../components/RelatedProducts';
 
 const Product = () => {
 
@@ -95,6 +96,10 @@ const Product = () => {
           <p>The vibrant pink shade adds a pop of color to your wardrobe, making it suitable for both casual outings and laid-back lounging. Durable, lightweight, and easy to care for—this pink tee is a versatile essential you’ll reach for again and again.</p>
         </div>
       </div>
+
+      {/*Display related products section*/}
+
+      <RelatedProducts category={productData.category} subCategory={productData.subCategory} />
 
     </div>
   ) : <div className='opacity-0'></div>
