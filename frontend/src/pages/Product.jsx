@@ -45,7 +45,7 @@ const Product = () => {
               {
                 productData.image.map((item, index) => (
                   <div key={index} className='scale-up w-[24%] sm:w-full flex-shrink-0 cursor-pointer'>
-                    <img onClick={() => setImage(item)} src={item} alt={`Product Image ${index + 1}`} className='border active:border-2 active:border-blue-500 rounded-xl sm:w-full flex-shrink-0 cursor-pointer' />
+                    <img onClick={() => setImage(item)} src={item} alt={`Product Image ${index + 1}`} className='border active:border-2 hover:border-blue-500 rounded-xl sm:w-full flex-shrink-0 cursor-pointer' />
                   </div>
                 ))
               }
