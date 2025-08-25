@@ -79,17 +79,17 @@ const UniHome = () => {
       </div>
 
       {/* Divider */}
-      <div className='flex justify-center items-center mt-7'>
+      <div className='flex justify-center items-center mt-7 max-sm:mt-3.5 sm:mt-3.5'>
         <hr className='bg-[#333333] h-0.5 w-6/7' />
       </div>
 
-      <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10'>
+      <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 sm:pt-2.5 max-sm:pt-2.5'>
 
         {/* Filter Section */}
         <div className='min-w-50'>
           <p
             onClick={() => setShowFilter(!showFilter)}
-            className='my-2 text-xl flex items-center cursor-pointer gap-2 pl-2'
+            className='my-2 text-xl flex items-center cursor-pointer gap-2 pl-2 sm:text-sm max-sm:text-[1.1rem] sm:pl-0 max-sm:pl-0'
           >
             FILTERS
             <img
@@ -137,15 +137,15 @@ const UniHome = () => {
 
         {/* Products Section */}
         <div className='flex-1'>
-          <div className='flex justify-between text-base sm:text-2xl mb-4'>
+          <div className='flex justify-between text-base max-sm:gap-4 max-sm:text-sm sm:text-sm mb-4'>
             <Title text1={'ALL'} text2={'PRODUCTS'} />
             <select
               onChange={(e) => setSortType(e.target.value)}
-              className='border-2 border-gray-300 text-sm px-2'
+              className='border-2 border-gray-300 text-sm max-sm:text-xs max-sm:px-0 px-2'
             >
-              <option value="relevance">Sort by: Relevance</option>
-              <option value="low-high">Sort by: Price - Low to High</option>
-              <option value="high-low">Sort by: Price - High to Low</option>
+              <option value="relevance" className=''>Sort by: Relevance</option>
+              <option value="low-high" className=''>Sort by: Price - Low to High</option>
+              <option value="high-low" className=''>Sort by: Price - High to Low</option>
             </select>
           </div>
 
