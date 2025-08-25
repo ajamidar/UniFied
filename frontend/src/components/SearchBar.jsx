@@ -29,8 +29,11 @@ const SearchBar = () => {
                 // Auto-hide the modal after 3 seconds
                 setTimeout(() => setShowModal(false), 3000);  
             } else {
-                // Toggle searchHit properly
-                setSearchHit(prev => !prev);
+                // Instead of toggling, force a new search by:
+                // 1. Set to false first
+                setSearchHit(false);
+                // 2. Then set to true in the next tick
+                setTimeout(() => setSearchHit(true), 0);
             }
             
         }
