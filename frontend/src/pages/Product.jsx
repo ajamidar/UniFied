@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useContext, useEffect, useState, useRef } from 'react'
+import { NavLink, useParams } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext';
 import { assets } from '../assets/frontend_assets/assets';
 import RelatedProducts from '../components/RelatedProducts';
@@ -11,6 +11,9 @@ const Product = () => {
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState('')
   const [size, setSize] = useState('')
+  const [isZoomed, setIsZoomed] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const imageRef = useRef(null);
 
   const fetchProductData = async () => {
 
@@ -27,10 +30,22 @@ const Product = () => {
     fetchProductData();
   }, [productId,products])
 
+  const handleMouseMove = (e) => {
+    if (imageRef.current) {
+      const { left, top, width, height } = imageRef.current.getBoundingClientRect();
+      const x = ((e.clientX - left) / width) * 100;
+      const y = ((e.clientY - top) / height) * 100;
+      setMousePosition({ x, y });
+    }
+  };
+
   return productData ? (
     <>
       <div className='flex pt-1.5'>
-        <button className='bg-blue-700 w-full rounded-2xl text-white sm:text-sm max-sm:text-sm px-1.5 py-1.5 font-medium hover:bg-blue-800 cursor-pointer'>Return to {selectedUni}'s Home</button>
+        <NavLink to={`/${selectedUni}`} className='text-blue-700 hover:underline w-full'>
+          <button className='bg-blue-700 w-full rounded-2xl text-white sm:text-sm max-sm:text-sm px-1.5 py-1.5 font-bold hover:bg-blue-800 cursor-pointer'>Return to {selectedUni}'s Home</button>
+        </NavLink>
+        
       </div>
       <div className='border-t-1 mt-2 transition-opacity ease-in duration-500 opacity-100'>
 
@@ -50,8 +65,21 @@ const Product = () => {
                 ))
               }
             </div>
-            <div className='w-full sm:w-[80%] pt-2'>
-              <img src={image} alt={`Product Image Main`} className='w-full h-auto border rounded-xl' />
+            <div className='w-full sm:w-[80%] border rounded-xl mt-2 relative overflow-hidden'>
+              <img 
+                ref={imageRef}
+                src={image} 
+                alt={`Product Image Main`} 
+                className={`w-full h-auto  rounded-xl cursor-zoom-in transition-transform duration-200 ${
+                  isZoomed ? 'scale-150' : ''
+                }`}
+                style={{
+                  transformOrigin: isZoomed ? `${mousePosition.x}% ${mousePosition.y}%` : 'center center'
+                }}
+                onClick={() => setIsZoomed(!isZoomed)}
+                onMouseMove={isZoomed ? handleMouseMove : undefined}
+                onMouseLeave={() => setIsZoomed(false)}
+              />
             </div>
           </div>
 
@@ -91,7 +119,7 @@ const Product = () => {
 
         {/* Description & Review Section */}
 
-        <div className='mt-10'>
+        <div className='mt-10 pb-12 max-sm:pb-6 border-b-1'>
           <div className='flex'>
             <b className='border px-5 py-3 text-sm'>Description</b>
             <p className='border px-5 py-3 text-sm'>Seller reviews(122) </p>

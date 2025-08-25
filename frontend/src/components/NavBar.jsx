@@ -58,18 +58,20 @@ const NavBar = () => {
             </div>
             */}
             <div className='flex flex-row items-center justify-center sm:gap-15! md:gap-15! lg:gap-15! xl:gap-15! 2xl:gap-15! 
-                            max-sm:gap-5 max-sm:order-1'>
-              <div className='scale-up flex flex-row justify-center items-center min-sm:hidden ml-1 max-sm:order-1'>
+                            max-sm:gap-8 max-sm:order-1'>
+
+              <div className='scale-up flex flex-row justify-center items-center min-sm:hidden  max-sm:order-1 '>
                 <NavLink to='/'>
                   <img src={assets.logo} width={90} height={100} className='size-[50px]'></img>
                 </NavLink>
               </div>
+
               <div className='flex flex-row items-center justify-center max-sm:flex-col max-sm:gap-0 max-sm:order-3 gap-15'>
                 <div className='sign-in/account order-2 max-sm:order-2 max-sm:pb-0.5'>
                   <NavLink to='/login'>
                     <button className='text-[1rem] sm:text-[0.42rem]! md:text-[1rem]! lg:text-[0.9rem]! xl:text-[1rem]! 2xl:text-[1.1rem]!
                      rounded-lg bg-[#215bd9] text-white font-bold hover:bg-[#0024b5] border-2 border-[#1a65011c] transition cursor-pointer
-                                      max-sm:font-medium max-sm:text-[0.42rem]! lg:font-medium! xl:font-extrabold! 2xl:font-extrabold!
+                                      max-sm:font-bold max-sm:text-[0.5rem]! lg:font-medium! xl:font-extrabold! 2xl:font-extrabold!
                                       max-sm:px-1! sm:px-1! md:px-1! lg:px-2! xl:px-2! 2xl:px-4!
                                       max-sm:py-0.5! sm:py-1! md:py-1! lg:py-1! xl:py-2! 2xl:py-2!'>
                       Sign In / Register
@@ -82,10 +84,10 @@ const NavBar = () => {
                       <img src='/cart.svg' width={45} height={45} alt='Basket' className='max-sm:size-[20px] md:size-[45px]'/>
                       <p className='text-[1.2rem] font-bold pt-3 max-sm:text-[0.55rem] md:text-[1rem] max-sm:pb-0.5 pr-2'>Cart ({num})</p>  
                     </div>
-                    <hr className='w-4/4 border-none h-[1.5px] bg-gray-700 hidden'/>
                   </NavLink>
                 </div>
               </div>
+
               <div className='scale-up border-3 border-[#4242422f] flex flex-col gap-1 items-center justify-center px-2 py-1.5 rounded-lg bg-gradient-to-b from-[#ffffffd1] to-[#c3eaffc4]
                             max-sm:px-2 max-sm:py-1.5  max-sm:order-2 max-sm:gap-1 min-sm:hidden'>
                 <div className='font-bold text-[1.05rem] max-sm:order-1 flex flex-row gap-0.5 items-center justify-center'>
@@ -110,6 +112,8 @@ const NavBar = () => {
                   }
                 </div>
               </div>
+
+
             </div>
         </div>
     </>
