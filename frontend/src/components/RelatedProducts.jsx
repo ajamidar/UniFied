@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react'
+import React, { useCallback, useContext, useMemo } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import { useParams } from 'react-router-dom'
 import ProductItem from './ProductItem'
@@ -6,7 +6,6 @@ import ProductItem from './ProductItem'
 const RelatedProducts = ({ category, subCategory }) => {
     const { products } = useContext(ShopContext)
     const { productId } = useParams()
-    const { selectedUni } = useParams() 
 
     // Memoize filtered products
     const related = useMemo(() => {
@@ -21,12 +20,13 @@ const RelatedProducts = ({ category, subCategory }) => {
             .slice(0, 5)
     }, [products, category, subCategory, productId])
 
-    const handleProductClick = (id) => {
+    const handleProductClick = useCallback((id) => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         openInNewTab(id);
-    };
+        }, []);
 
-    if (!related.length) return null
+
+    if (!Array.isArray(products) || !products.length) return null
 
     return (
         <div className='mt-10'>
