@@ -41,7 +41,7 @@ const Product = () => {
           {/* Product Image */}
 
           <div className='flex-1 flex flex-col-reverse gap-3 sm:flex-row'>
-            <div className='flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full px-2 py-2 max-sm:py-0 gap-2 max-sm:gap-0 sm:gap-0'>
+            <div className='flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full px-2 py-2 max-sm:py-0 gap-2! max-sm:gap-0! sm:gap-0'>
               {
                 productData.image.map((item, index) => (
                   <div key={index} className='scale-up w-[24%] sm:w-full flex-shrink-0 cursor-pointer'>
@@ -57,7 +57,7 @@ const Product = () => {
 
           {/*Product Info*/}
           <div className='flex-1'>
-            <h1 className='text-2xl mt-2 max-sm:mt-0 font-medium'>{productData.name}</h1>
+            <h1 className='text-2xl font-medium'>{productData.name}</h1>
             <div className='flex items-center gap-1 mt-2'>
               <h2>Seller rating:</h2>
               <img src={assets.star_icon} alt="star-icon" className='w-3 5'/>

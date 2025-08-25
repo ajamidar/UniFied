@@ -9,16 +9,8 @@ const NavBar = () => {
   const [searchValue, setSearchValue] = useState('');
   const [isVisible, setIsVisible] = useState(false);
 
-  const toggleVisibility = () => {
-    setIsVisible(!isVisible);
-  };
-
   const resetSelectedUni = () => {
     setSelectedUni('');
-  };
-
-  const handleSearch = () => {
-    alert(searchValue); // Or use the value however you want
   };
 
   const num=0; // Placeholder for cart item count, replace with actual logic
