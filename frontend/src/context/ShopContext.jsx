@@ -1,7 +1,8 @@
-import { createContext, useState } from "react";
+import { useState } from "react";
 import { ShopContext } from "./ShopContextContext";
 import { products } from "../assets/frontend_assets/assets";
 import { toast } from "react-toastify";
+
 
 const ShopContextProvider = ({ children }) => {
 
@@ -39,13 +40,28 @@ const ShopContextProvider = ({ children }) => {
         setCartItems(cartData);
     }
 
+    const getCartCount = () => {
+        // Initialize total count of items in cart
+        let totalCount = 0;
+        // Iterate over each item in the cart
+        Object.entries(cartItems).forEach(([itemId, sizes]) => {
+            // Iterate over each size for the current item
+            Object.values(sizes).forEach(qty => {
+                // If quantity is greater than 0, add to total count
+                if (qty > 0) totalCount += qty;
+            });
+        });
+        // Return the total count of items in the cart
+        return totalCount;
+    }
+
     const value = {
         products , currency,
         search, setSearch,
         showSearch, setShowSearch,
         searchHit, setSearchHit,
         cartItems, setCartItems,
-        addToCart,
+        addToCart, getCartCount
     }
 
     return (
