@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useMemo } from 'react'
-import { ShopContext } from '../context/ShopContext'
+import { ShopContext } from '../context/ShopContextContext'
 import { useParams } from 'react-router-dom'
 import ProductItem from './ProductItem'
 

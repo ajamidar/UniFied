@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState, useRef } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
-import { ShopContext } from '../context/ShopContext';
+import { ShopContext } from '../context/ShopContextContext';
 import { assets } from '../assets/frontend_assets/assets';
 import RelatedProducts from '../components/RelatedProducts';
 
 const Product = () => {
 
   const { productId, selectedUni } = useParams();
-  const { products, currency } = useContext(ShopContext);
+  const { products, currency, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState('')
   const [size, setSize] = useState('')
@@ -107,7 +107,7 @@ const Product = () => {
                 ))}
               </div>
             </div>
-            <button className='bg-blue-700 rounded-2xl text-white px-8 py-3 text-sm active:bg-blue-900 cursor-pointer'>ADD TO CART</button>
+            <button onClick={()=>addToCart(productData._id, size)} className='bg-blue-700 rounded-2xl text-white px-8 py-3 text-sm active:bg-blue-900 cursor-pointer'>ADD TO CART</button>
             <hr className='mt-8 sm:w-4/5' />
             <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
                 <p>✅Verified Seller</p>

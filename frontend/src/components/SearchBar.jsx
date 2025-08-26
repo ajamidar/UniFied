@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { ShopContext } from '../context/ShopContext';
+import { ShopContext } from '../context/ShopContextContext';
 import { assets } from '../assets/frontend_assets/assets';
 import { useLocation } from 'react-router-dom';
 
@@ -57,7 +57,7 @@ const SearchBar = () => {
                             onClick={() => setShowModal(false)}
                             className="ml-4 text-red-700 hover:text-red-900"
                         >
-                            ×
+                            
                         </button>
                     </div>
                 </div>

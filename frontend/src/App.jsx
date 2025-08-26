@@ -11,6 +11,7 @@ import Orders from "./pages/Orders"
 import NavBar from "./components/NavBar"
 import UniHome from "./pages/UniHome"
 import Footer from "./components/Footer"
+import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
     <>
       <NavBar />
       <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[4vw]">
+        <ToastContainer />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:selectedUni" element={<UniHome />} />

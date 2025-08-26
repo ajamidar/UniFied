@@ -1,7 +1,7 @@
 import React, { useContext, useMemo, useState, useCallback } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import GradientText from '../components/GradientText'
-import { ShopContext } from '../context/ShopContext'
+import { ShopContext } from '../context/ShopContextContext'
 import { assets } from '../assets/frontend_assets/assets'
 import Title from '../components/Title'
 import ProductItem from '../components/ProductItem'
