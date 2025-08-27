@@ -55,6 +55,7 @@ const ShopContextProvider = ({ children }) => {
         return totalCount;
     }
 
+    //Get the values in other files
     const value = {
         products , currency,
         search, setSearch,
