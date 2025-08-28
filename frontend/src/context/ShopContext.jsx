@@ -12,6 +12,7 @@ const ShopContextProvider = ({ children }) => {
     const [searchHit, setSearchHit] = useState(false);
     const [cartItems, setCartItems] = useState({});
 
+    //Add to cart functionality
     const addToCart = async (itemId, size) => {
 
         if (!size) {
