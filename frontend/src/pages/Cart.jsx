@@ -52,7 +52,7 @@ const Cart = () => {
                     </div>
                   </div>
                 </div>
-                <input type='number' min={1} defaultValue={item.quantity} className='border max-w-10 sm:max-w-20 px-1 sm:px-2 py-1' />
+                <input onChange={(e) => e.target.value === '' || e.target.value === '0' ? null : updateQuantity(item._id, item.size, Number(e.target.value))} type='number' min={1} defaultValue={item.quantity} className='border max-w-10 sm:max-w-20 px-1 sm:px-2 py-1' />
                 <img onClick={()=>updateQuantity(item._id, item.size, 0)} src={assets.bin_icon} alt='' className='w-6 mr-4 py-2 px-1 rounded-xl sm:w-6 scale-up hover:bg-[#dddddd] cursor-pointer' />
               </div>
             )
