@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContextContext';
 import Title from '../components/Title';
+import { assets } from '../assets/frontend_assets/assets';
 
 const Cart = () => {
 
-  const { products, currency, cartItems } = useContext(ShopContext);
+  const { products, currency, cartItems, updateQuantity } = useContext(ShopContext);
 
   const [cartData, setCartData] = useState([]);
 
@@ -45,8 +46,14 @@ const Cart = () => {
                   <img src={productData.image[0]} alt="product image" className='w-16 sm:w-20'/>
                   <div>
                     <p className='text-xs sm:text-lg font-medium'>{productData.name}</p>
+                    <div className='flex items-center gap-2.5 mt-2'>
+                      <p>{currency}{productData.price}</p>
+                      <p className='px-1 scale-up sm:px-2.5 sm:py-0.5 text-sm border bg-[#98cfff] hover:bg-[#70bcff] rounded-2xl'>{item.size}</p>
+                    </div>
                   </div>
                 </div>
+                <input type='number' min={1} defaultValue={item.quantity} className='border max-w-10 sm:max-w-20 px-1 sm:px-2 py-1' />
+                <img onClick={()=>updateQuantity(item._id, item.size, 0)} src={assets.bin_icon} alt='' className='w-6 mr-4 py-2 px-1 rounded-xl sm:w-6 scale-up hover:bg-[#dddddd] cursor-pointer' />
               </div>
             )
 
