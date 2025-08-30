@@ -66,6 +66,24 @@ const ShopContextProvider = ({ children }) => {
 
     }
 
+    const getCartAmount = async => {
+        let totalAmount = 0;
+        for(const items in cartItems){
+            let itemInfo = products.find((product)=> product._id === items);
+            for(const item in cartItems[items]){
+                try{
+                    if (cartItems[items][item]>0){
+                        let itemPrice = itemInfo.price * cartItems[items][item];
+                        totalAmount += itemPrice;
+                    }
+                }catch(error){
+                    console.log(error);
+                }
+            }
+        }
+        return totalAmount
+    }
+
     //Get the values in other files
     const value = {
         products , currency,
@@ -74,7 +92,7 @@ const ShopContextProvider = ({ children }) => {
         searchHit, setSearchHit,
         cartItems, setCartItems,
         addToCart, getCartCount,
-        updateQuantity
+        updateQuantity, getCartAmount
     }
 
     return (
