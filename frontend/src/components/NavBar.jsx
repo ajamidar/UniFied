@@ -1,14 +1,26 @@
 import React, { use, useContext, useState } from 'react'
 import {assets} from '../assets/frontend_assets/assets'
-import { NavLink, useParams } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { tempUniData } from '../assets/constants'
 import SearchBar from './SearchBar'
 import { ShopContext } from '../context/ShopContextContext'
+import { toast } from 'react-toastify'
 
 const NavBar = () => {
   const [selectedUni, setSelectedUni] = useState('');
   const [searchValue, setSearchValue] = useState('');
   const getCartCount = useContext(ShopContext)?.getCartCount;
+  const navigate = useNavigate();
+
+  const handleCartHit = () =>{
+    if (selectedUni === ''){
+      toast.error("Please select a university");
+    }
+    else{
+      navigate(`${selectedUni}/cart`);
+    }
+  }
+
 
   return (
     <>
@@ -73,13 +85,13 @@ const NavBar = () => {
                     </button>
                   </NavLink>
                 </div>
-                <div className='cart scale-up order-2 max-sm:order-1 max-sm:mt-1'>
-                  <NavLink to='/cart' className='flex flex-col items-center justify-center md:pr-2'>
+                <div onClick={handleCartHit} className='cart scale-up order-2 max-sm:order-1 max-sm:mt-1 cursor-pointer'>
+                  <div className='flex flex-col items-center justify-center md:pr-2'>
                     <div className='flex flex-row items-center justify-center gap-1 max-sm:gap-0'>                  
                       <img src='/cart.svg' width={45} height={45} alt='Basket' className='max-sm:size-[20px] md:size-[45px]'/>
                       <p className='text-[1.2rem] font-bold pt-3 max-sm:text-[0.55rem] md:text-[1rem] max-sm:pb-0.5 pr-2'>Cart ({getCartCount()})</p>  
                     </div>
-                  </NavLink>
+                  </div>
                 </div>
               </div>
 

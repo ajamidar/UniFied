@@ -45,8 +45,8 @@ const Product = () => {
         <NavLink to={`/${selectedUni}`} className='text-blue-700 hover:underline w-full'>
           <button className='bg-blue-700 w-full rounded-2xl text-white sm:text-sm max-sm:text-sm px-1.5 py-1.5 font-bold hover:bg-blue-800 cursor-pointer'>Return to {selectedUni}'s Home</button>
         </NavLink>
-        
       </div>
+
       <div className='border-t-1 mt-2 transition-opacity ease-in duration-500 opacity-100'>
 
         {/* Product Details */}

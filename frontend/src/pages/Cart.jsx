@@ -3,8 +3,11 @@ import { ShopContext } from '../context/ShopContextContext';
 import Title from '../components/Title';
 import { assets } from '../assets/frontend_assets/assets';
 import CartTotal from '../components/CartTotal';
+import { NavLink, useParams } from 'react-router-dom';
 
 const Cart = () => {
+
+  const { selectedUni } = useParams();
 
   const { products, currency, cartItems, updateQuantity } = useContext(ShopContext);
 
@@ -29,9 +32,16 @@ const Cart = () => {
   }, [cartItems]);
 
   return (
-    <div className='pt-7.5'>
+    <div className='pt-2'>
 
-      <div className='text-2xl mb-3'>
+      <div className='flex'>
+        <NavLink to={`/${selectedUni}`} className='text-blue-700 hover:underline w-full'>
+          <button className='bg-blue-700 w-full rounded-2xl text-white sm:text-sm max-sm:text-sm px-1.5 py-1.5 font-bold hover:bg-blue-800 cursor-pointer'>Return to {selectedUni}'s Home</button>
+        </NavLink>
+      </div>
+      <hr className='my-2' />
+
+      <div className='text-2xl mb-3 mt-4'>
         <Title text1 ={'YOUR'} text2={'CART'} />
       </div>
 
