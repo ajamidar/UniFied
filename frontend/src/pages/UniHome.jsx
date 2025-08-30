@@ -75,15 +75,17 @@ const UniHome = () => {
     <>
       <div className={`transition-opacity duration-250 ease-in ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
         {/* Header */}
-        <div onClick={refreshPage} className='flex justify-center items-center mt-5 max-sm:mt-2.5'>
-          <GradientText
-            colors={["#333333", "#4079ff", "#000000", "#4079ff", "#333333"]}
-            animationSpeed={5}
-            showBorder={false}
-            className="custom-class max-sm:text-3xl max-sm:pl-5 px-4 text-4xl md:text-4xl font-bold!"
-          >
-            {selectedUni}'s Collection
-          </GradientText>
+        <div className='flex justify-center items-center mt-5 max-sm:mt-2.5'>
+          <div onClick={refreshPage}>
+            <GradientText
+              colors={["#333333", "#4079ff", "#000000", "#4079ff", "#333333"]}
+              animationSpeed={5}
+              showBorder={false}
+              className="custom-class max-sm:text-3xl max-sm:pl-5 px-4 text-4xl md:text-4xl font-bold!"
+            >
+              {selectedUni}'s Collection
+            </GradientText>
+          </div>
         </div>
 
         {/* Divider */}

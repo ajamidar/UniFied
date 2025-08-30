@@ -8,7 +8,6 @@ import { toast } from 'react-toastify'
 
 const NavBar = () => {
   const [selectedUni, setSelectedUni] = useState('');
-  const [searchValue, setSearchValue] = useState('');
   const getCartCount = useContext(ShopContext)?.getCartCount;
   const navigate = useNavigate();
 
@@ -48,7 +47,7 @@ const NavBar = () => {
               </div>
               { selectedUni != '' &&
               <NavLink to={`/${selectedUni}`}>
-                    <button className={`px-2.5 py-2 text-[0.8rem] text-white font-bold  rounded-4xl bg-[#0077ff] cursor-pointer transition`}>Your Uni's Products...</button>
+                    <button className={`px-2.5 py-2 text-[0.8rem] text-white font-bold  rounded-4xl bg-[#0077ff] hover:bg-blue-700 cursor-pointer transition`}>Your Uni's Products...</button>
               </NavLink>
               }
             </div>
@@ -77,7 +76,7 @@ const NavBar = () => {
                 <div className='sign-in/account order-2 max-sm:order-2 max-sm:pb-0.5'>
                   <NavLink to='/login'>
                     <button className='text-[1rem] sm:text-[0.42rem]! md:text-[1rem]! lg:text-[0.9rem]! xl:text-[1rem]! 2xl:text-[1.1rem]!
-                     rounded-lg bg-[#215bd9] text-white font-bold hover:bg-[#0024b5] border-2 border-[#1a65011c] transition cursor-pointer
+                     rounded-lg bg-[#0077ff] text-white font-bold hover:bg-blue-700 border-2 border-[#1a65011c] transition cursor-pointer
                                       max-sm:font-bold max-sm:text-[0.5rem]! lg:font-medium! xl:font-extrabold! 2xl:font-extrabold!
                                       max-sm:px-1! sm:px-1! md:px-1! lg:px-2! xl:px-2! 2xl:px-4!
                                       max-sm:py-0.5! sm:py-1! md:py-1! lg:py-1! xl:py-2! 2xl:py-2!'>
@@ -114,7 +113,7 @@ const NavBar = () => {
                 <div className='max-sm:order-3'>
                 { selectedUni != '' &&
                   <NavLink to={`/${selectedUni}`}>
-                        <button className={`px-2.5 py-1 text-[0.5rem] text-white font-bold  rounded-4xl bg-[#0077ff] cursor-pointer transition`}>Your Uni's Products...</button>
+                        <button className={`px-2.5 py-1 text-[0.5rem] text-white font-bold  rounded-4xl bg-[#0077ff] hover:bg-blue-700 cursor-pointer transition`}>Your Uni's Products...</button>
                   </NavLink>
                   }
                 </div>

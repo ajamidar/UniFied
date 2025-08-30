@@ -36,7 +36,7 @@ const Cart = () => {
 
       <div className='flex'>
         <NavLink to={`/${selectedUni}`} className='text-blue-700 hover:underline w-full'>
-          <button className='bg-blue-700 w-full rounded-2xl text-white sm:text-sm max-sm:text-sm px-1.5 py-1.5 font-bold hover:bg-blue-800 cursor-pointer'>Return to {selectedUni}'s Home</button>
+          <button className='bg-[#0077ff] w-full rounded-2xl text-white sm:text-sm max-sm:text-sm px-1.5 py-1.5 font-bold hover:bg-blue-700 cursor-pointer'>Return to {selectedUni}'s Home</button>
         </NavLink>
       </div>
       <hr className='my-2' />
