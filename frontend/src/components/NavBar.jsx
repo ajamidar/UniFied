@@ -1,6 +1,6 @@
 import React, { use, useContext, useState } from 'react'
 import {assets} from '../assets/frontend_assets/assets'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import { tempUniData } from '../assets/constants'
 import SearchBar from './SearchBar'
 import { ShopContext } from '../context/ShopContextContext'
@@ -9,12 +9,6 @@ const NavBar = () => {
   const [selectedUni, setSelectedUni] = useState('');
   const [searchValue, setSearchValue] = useState('');
   const getCartCount = useContext(ShopContext)?.getCartCount;
-
-  const resetSelectedUni = () => {
-    setSelectedUni('');
-  };
-
-  const num=0; // Placeholder for cart item count, replace with actual logic
 
   return (
     <>
@@ -42,7 +36,7 @@ const NavBar = () => {
               </div>
               { selectedUni != '' &&
               <NavLink to={`/${selectedUni}`}>
-                    <button onClick={resetSelectedUni} className={`px-2.5 py-2 text-[0.8rem] text-white font-bold  rounded-4xl bg-[#0077ff] cursor-pointer transition`}>Your Uni's Products...</button>
+                    <button className={`px-2.5 py-2 text-[0.8rem] text-white font-bold  rounded-4xl bg-[#0077ff] cursor-pointer transition`}>Your Uni's Products...</button>
               </NavLink>
               }
             </div>
@@ -108,7 +102,7 @@ const NavBar = () => {
                 <div className='max-sm:order-3'>
                 { selectedUni != '' &&
                   <NavLink to={`/${selectedUni}`}>
-                        <button onClick={resetSelectedUni} className={`px-2.5 py-1 text-[0.5rem] text-white font-bold  rounded-4xl bg-[#0077ff] cursor-pointer transition`}>Your Uni's Products...</button>
+                        <button className={`px-2.5 py-1 text-[0.5rem] text-white font-bold  rounded-4xl bg-[#0077ff] cursor-pointer transition`}>Your Uni's Products...</button>
                   </NavLink>
                   }
                 </div>
