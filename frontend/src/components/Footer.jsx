@@ -3,7 +3,7 @@ import { assets } from '../assets/frontend_assets/assets'
 
 const Footer = () => {
   return (
-    <div>
+    <div className='max-sm:mb-5'>
         <hr className='mt-30 max-sm:mt-10' />
         <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] ] gap-14 my-10 text-sm max-sm:gap-5'>
 
