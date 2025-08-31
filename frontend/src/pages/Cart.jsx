@@ -9,7 +9,7 @@ const Cart = () => {
 
   const { selectedUni } = useParams();
 
-  const { products, currency, cartItems, updateQuantity } = useContext(ShopContext);
+  const { products, currency, cartItems, updateQuantity, navigate } = useContext(ShopContext);
 
   const [cartData, setCartData] = useState([]);
 
@@ -83,6 +83,10 @@ const Cart = () => {
       <div className='flex justify-end my-20'>
         <div className='w-full sm:w-[450px]'>
           <CartTotal />
+          <hr className='mt-2' />
+          <div className='w-full sm:w-[450px] my-6'>
+            <button onClick={() => navigate('/place-order')} className='bg-[#0077ff] w-full rounded-2xl text-white sm:text-sm max-sm:text-sm px-1.5 py-1.5 font-bold hover:bg-blue-700 cursor-pointer'>PROCEED TO CHECKOUT</button>
+          </div>
         </div>
       </div>
       

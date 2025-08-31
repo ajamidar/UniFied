@@ -255,6 +255,8 @@ a.active hr{
   transition: 0.3s ease;
 }
 
+
+
 @media (max-width: 768px) {
   .gallery-item {
     padding: 6%;
@@ -268,3 +270,24 @@ a.active hr{
 ::-webkit-scrollbar{
   display: none;
 }
+
+.react-tel-input {
+  width: 100% !important;
+}
+
+.react-tel-input .form-control {
+  width: 100% !important;
+}
+
+.phone-input-container {
+  width: 100%;
+}
+
+.phone-input-container .form-control {
+  width: 100% !important;
+}
+
+.phone-input-dropdown {
+  background-color: white !important;
+}
+
