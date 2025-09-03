@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const Login = () => {
-  const [currentState, setCurrentState] = useState('Sign Up');
+  const [currentState, setCurrentState] = useState('Login');
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -10,7 +10,9 @@ const Login = () => {
         <p className='prata-regular text-3xl'>{currentState}</p>
         <hr className='border-none h-[1.5px] w-8 bg-gray-800' />
       </div>
+      {currentState === 'Login' ? '' : 
       <input type='text' className='w-2/5 px-3 py-2 border border-gray-800' placeholder='Full Name' required />
+      }
       <input type='email' className='w-2/5 px-3 py-2 border border-gray-800' placeholder='Email Address' required />
 
       {/* Password input with checkbox toggle */}
