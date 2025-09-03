@@ -10,15 +10,15 @@ const Login = () => {
         <p className='prata-regular text-3xl'>{currentState}</p>
         <hr className='border-none h-[1.5px] w-8 bg-gray-800' />
       </div>
-      <input type='text' className='w-2/5 px-3 py-2 border border-gray-800' placeholder='Full Name' />
-      <input type='email' className='w-2/5 px-3 py-2 border border-gray-800' placeholder='Email Address' />
-      
+      <input type='text' className='w-2/5 px-3 py-2 border border-gray-800' placeholder='Full Name' required />
+      <input type='email' className='w-2/5 px-3 py-2 border border-gray-800' placeholder='Email Address' required />
+
       {/* Password input with checkbox toggle */}
       <div className='w-2/5'>
         <input 
           type={showPassword ? 'text' : 'password'} 
           className='w-full px-3 py-2 border border-gray-800' 
-          placeholder='Password' 
+          placeholder='Password' required
         />
         <div className="flex items-center mt-1">
           <input
