@@ -16,27 +16,35 @@ const Login = () => {
       <input type='email' className='w-2/5 px-3 py-2 border border-gray-800' placeholder='Email Address' required />
 
       {/* Password input with checkbox toggle */}
-      <div className='w-2/5 flex flex-row'>
-        <input 
-          type={showPassword ? 'text' : 'password'} 
-          className='px-3 py-2 border border-gray-800 w-19/20' 
-          placeholder='Password' required
-        />
-        <div className="flex items-center justify-center w-1/20 bg-[#e2e0e0] hover:bg-[#b4b4b4] cursor-pointer">
-          <div className='flex justify-center items-center border-r border-r-gray-800 border-t border-t-gray-800 border-b border-b-gray-800 h-full'>
-            <img
-            src='/eye-icon.svg'
-            alt="Toggle password visibility"
-            className=" cursor-pointer size-[70%]"
-            onClick={() => setShowPassword(!showPassword)}
-            />
-          </div>        
+      <div className='flex flex-col items-center gap-3 w-full'>
+
+        <div className='w-2/5 flex flex-row'>
+          <input 
+            type={showPassword ? 'text' : 'password'} 
+            className='px-3 py-2 border border-gray-800 w-19/20' 
+            placeholder='Password' required
+          />
+          <div className="flex items-center justify-center w-1/20 bg-[#e2e0e0] hover:bg-[#b4b4b4] cursor-pointer">
+            <div className='flex justify-center items-center border-r border-r-gray-800 border-t border-t-gray-800 border-b border-b-gray-800 h-full'>
+              <img
+              src='/eye-icon.svg'
+              alt="Toggle password visibility"
+              className=" cursor-pointer size-[70%]"
+              onClick={() => setShowPassword(!showPassword)}
+              />
+            </div>        
+          </div>
         </div>
-        
-      </div>
-      <div className='w-full flex justify-between text-sm mt-[-8px]'>
+
+        <div className='flex items-center w-2/5 pl-2 justify-start text-sm mt-[-8px]'>
           <p className='cursor-pointer'>Forgot Your Password?</p>
         </div>
+
+     
+
+      </div>
+      
+      
     </form>
   )
 }
