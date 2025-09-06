@@ -29,7 +29,8 @@ const Footer = () => {
                             <NavLink to='/login'>
                                 <li>Login</li>
                             </NavLink>
-
+                            
+                            {/* To be changed later */}
                             <NavLink to='/login'>
                                 <li>Collection</li>
                             </NavLink>
