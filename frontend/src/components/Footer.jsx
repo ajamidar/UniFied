@@ -35,6 +35,7 @@ const Footer = () => {
                                 <li>Collection</li>
                             </NavLink>
 
+                            {/* To be changed later */}
                             <NavLink to='/'>
                                 <li>Privacy policy</li>
                             </NavLink>
