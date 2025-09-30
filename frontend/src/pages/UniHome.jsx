@@ -32,7 +32,7 @@ const UniHome = () => {
   }, [])
 
   const refreshPage = () => {
-     navigate(0); // This refreshes the current route
+     navigate(0);
   };
 
   const filteredProducts = useMemo(() => {
